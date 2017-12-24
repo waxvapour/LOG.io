@@ -1,0 +1,331 @@
+<!-- waxvapour@gmail.com-->
+<!DOCTYPE html>
+<html>
+<!--METADATA content-->
+	<meta name="robots" content="noindex">
+	<meta http-equiv="refresh" content="300">
+	<meta name="author" content="Vaibhav sharma">
+	<meta name="description" content="LOG#1">
+	<meta name="application-name" content="LOG#1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="LOG#1,vaibhav sharma,vaibhav">
+<!--METADATA content end-->
+<script src="caster.js"></script><link href="beat.css" type="text/css" rel="stylesheet" />
+
+
+<head><link rel="shortcut icon" href="fevicon.ico"; type="image/ico" /><title>LOG#1</title></head>
+<body onload="faceoff()">
+<!--parrlax effect-->
+<div class="bgimg" id="home">
+  <div class="caption">
+  
+    <img src="logow.png" style="height:20%; width:25%;"/>
+
+		<!--autotype text-->
+		<div class="container">
+		<h1 class="heading" data-target-resolver="">LOG#1</h1>
+		
+		
+				<!--auto typetext script-->
+		<script>
+		var resolver = {
+  resolve: function resolve(options, callback) {
+    // The string to resolve
+    var resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
+    var combinedOptions = Object.assign({}, options, { resolveString: resolveString });
+
+    function getRandomInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    function randomCharacter(characters) {
+      return characters[getRandomInteger(0, characters.length - 1)];
+    };
+
+    function doRandomiserEffect(options, callback) {
+      var characters = options.characters;
+      var timeout = options.timeout;
+      var element = options.element;
+      var partialString = options.partialString;
+
+      var iterations = options.iterations;
+
+      setTimeout(function () {
+        if (iterations >= 0) {
+          var nextOptions = Object.assign({}, options, { iterations: iterations - 1 });
+
+          // Ensures partialString without the random character as the final state.
+          if (iterations === 0) {
+            element.textContent = partialString;
+          } else {
+            // Replaces the last character of partialString with a random character
+            element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+          }
+
+          doRandomiserEffect(nextOptions, callback);
+        } else if (typeof callback === "function") {
+          callback();
+        }
+      }, options.timeout);
+    };
+
+    function doResolverEffect(options, callback) {
+      var resolveString = options.resolveString;
+      var characters = options.characters;
+      var offset = options.offset;
+      var partialString = resolveString.substring(0, offset);
+      var combinedOptions = Object.assign({}, options, { partialString: partialString });
+
+      doRandomiserEffect(combinedOptions, function () {
+        var nextOptions = Object.assign({}, options, { offset: offset + 1 });
+
+        if (offset <= resolveString.length) {
+          doResolverEffect(nextOptions, callback);
+        } else if (typeof callback === "function") {
+          callback();
+        }
+      });
+    };
+
+    doResolverEffect(combinedOptions, callback);
+  }
+};
+
+
+var strings = ['Hellow World.' ,'We are LOG#1','a company that is intrested in the phase change of the socity', 'and life style.', 'we provide solutions..','to problums that troubles you the most.','check us out.'];
+
+var counter = 0;
+
+var options = {
+  // Initial position
+  offset: 0,
+  // Timeout between each random character
+  timeout: 5,
+  // Number of random characters to show
+  iterations: 10,
+  // Random characters to pick from
+  characters: ['|'],
+  // String to resolve
+  resolveString: strings[counter],
+  // The element
+  element: document.querySelector('[data-target-resolver]')
+};
+
+// Callback function when resolve completes
+function callback() {
+  setTimeout(function () {
+    counter++;
+
+    if (counter >= strings.length) {
+      counter = 0;
+    }
+
+    var nextOptions = Object.assign({}, options, { resolveString: strings[counter] });
+    resolver.resolve(nextOptions, callback);
+  }, 1000);
+}
+
+resolver.resolve(options, callback);
+		</script>
+		
+				<!--auto typetext script end-->
+
+		
+		</div>
+	</div>
+</div>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOG#1</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+      <a href="#numbers" class="w3-bar-item w3-button"><i class="fa fa-usd"></i>NUMBERS</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#numbers" onclick="w3_close()" class="w3-bar-item w3-button">NUMBERS</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!--foot-->
+<div class="into" >
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">We Provide Solutions.</h3>
+  <p class="w3-center w3-large">some key features</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <p class="w3-large" >Responsive</p>
+      <p  style="border-right:dashed 2px grey; padding-right:10px;">solutions that are quick at pace, We understand haste.</p>
+    </div>
+    <div class="w3-quarter">
+      <p class="w3-large" >Passionate</p>
+      <p  style="border-right:dashed 2px grey; padding-right:10px;">We have people who love what they do and are really good at it.</p>
+    </div>
+    <div class="w3-quarter">
+      <p class="w3-large"  >Updated</p>
+      <p  style="border-right:dashed 2px grey; padding-right:10px;">We don't believe in outdated solutions, we like to keep up.</p>
+    </div>
+    <div class="w3-quarter">
+      <p class="w3-large"  >Supportive</p>
+      <p  style="border-right:dashed 2px grey; padding-right:10px;">24/7 support as once you are with us, you are like a Family. </p>
+    </div>
+  </div>		
+</div></div>
+<div class="bgmimg" id="team">
+<div  id="captionbb" >
+	
+  <h3 class="w3-center"><span id="aa">OUR PEOPLE</span></h3>
+  <p class="w3-center w3-large"><span id="aa">The ones who run the company</span></p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="facea.jpg" alt="Mr. Subrat Sen" style="width:100%">
+        <div class="w3-container" id="aa">
+          <h3>Mr.Subrat Sen</h3>
+          <p class="w3-opacity">Founder</p>
+          <p>Mr.Subrat sen is the founder & CEO of LOG#1. He is the Man who made company possible.</p>
+          <p><button class="w3-button w3-light-grey w3-block" onclick="a()"> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="faceb.jpg" alt="b" style="width:100%">
+        <div class="w3-container" id="aa">
+          <h3>Mr.b</h3>
+          <p class="w3-opacity">Art Designer</p>
+          <p>he dose art. he don't speak a lot, he is just kinda wieard but he's good at what he do.</p>
+          <p><button class="w3-button w3-light-grey w3-block"  onclick="a()">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="facec.jpg" alt="Waxvapour" style="width:100%">
+        <div class="w3-container" id="aa">
+          <h3>Vaibhav</h3>
+          <p class="w3-opacity">Web Designer</p>
+          <p>i am the one who created this site. so, you can decide about my work. </p>
+          <p><button class="w3-button w3-light-grey w3-block"  onclick="a()">Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="faced.jpg" alt="goule" style="width:100%">
+        <div class="w3-container" id="aa">
+          <h3>Mr. Goule</h3>
+          <p class="w3-opacity">Manager</p>
+          <p>he manages the stuff that is out of out hands, like how the whole team will sync and stuff.</p>
+          <p><button class="w3-button w3-light-grey w3-block"  onclick="a()">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<div class="into" id="numbers">
+<p class="w3-center w3-large">Some numbers for you to see.</p>
+<div class="w3-container w3-row w3-center w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">10+</span>
+    <br>Partners
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">60+</span>
+    <br>Projects Done
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">100+</span>
+    <br>Happy Clients
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">150+</span>
+    <br>Meetings
+  </div>
+</div>
+</div>
+<div class="bgmimgm" id="work">
+<div  id="captionbb">
+ <h3 class="w3-center"><span id="aa">Our Intrest Areas</span></h3>
+  <p class="w3-center w3-large"><span id="aa">the ones we have done a lot and like to work over.</span></p>
+  <div class="w3-container" style="padding:128px 16px" >
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="f1.jpg" style="width:100%"  onclick="a()" alt="Website development">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f2.jpg" style="width:100%" onclick="a()"  alt="Web App development">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f3.jpg" style="width:100%" onclick="a()" alt="big data Analysis">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f4.jpg" style="width:100%" onclick="a()"  alt="Hadoop Node Setup">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="f5.jpg" style="width:100%" onclick="a()" alt="SEO">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f6.jpg" style="width:100%" onclick="a()" alt="Software Debugging">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f7.jpg" style="width:100%" onclick="a()" alt="Data recovery">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="f8.jpg" style="width:100%" onclick="a()" alt="Virtulization">
+    </div>
+  </div>
+</div>
+
+</div></div>
+<div class="into" id="contact">
+  
+<!-- Contact Section -->
+<div class="w3-container" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-center">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Delhi, INDIA</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 00000000</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: Waxvapur@LOG#1.com</p>
+      <br>
+      <form action="#" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p><br>
+          <button class="w3-button w3-black" type="button" onclick="a()">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+  </div>
+</div>
+</div>
+</body>
+</html>
